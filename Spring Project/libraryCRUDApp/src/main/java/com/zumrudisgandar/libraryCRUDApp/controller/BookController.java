@@ -62,8 +62,7 @@ public class BookController {
     }
 
     @PostMapping("/saveEdit")
-    public String saveEdit(@PathVariable Integer idx, @ModelAttribute("book") Book editedBook) {
-        System.out.println(idx);
+    public String saveEdit(@RequestParam Integer idx, @ModelAttribute("book") Book editedBook) {
         bookService.updateBook(idx, editedBook);
         return "redirect:/books";
     }
